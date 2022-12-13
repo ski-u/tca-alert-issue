@@ -1,6 +1,8 @@
 # tca-alert-issue
 ## issue
 - Button is disabled when we set like `secondaryButton: .cancel(.init("Cancel"))` in `AlertState.init`.
+- This occurs on iOS 14.
+  - No problem with iOS 15 and iOS 16.
 
 ## ScreenShot
 ![Simulator Screen Recording - iPhone SE (2nd generation) - 2022-12-13 at 13 51 47](https://user-images.githubusercontent.com/37182704/207340255-7ef1a58c-4db3-406b-9d60-b3af3c82cea1.gif)
