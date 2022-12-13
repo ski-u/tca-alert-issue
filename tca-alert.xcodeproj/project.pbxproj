@@ -7,15 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		04D2983F2948367F00557DDD /* tca_alertApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D2983E2948367F00557DDD /* tca_alertApp.swift */; };
+		04D2983F2948367F00557DDD /* AlertApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D2983E2948367F00557DDD /* AlertApp.swift */; };
 		04D298412948367F00557DDD /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D298402948367F00557DDD /* ContentView.swift */; };
 		04D298432948368000557DDD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04D298422948368000557DDD /* Assets.xcassets */; };
 		04D298462948368000557DDD /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04D298452948368000557DDD /* Preview Assets.xcassets */; };
+		04D298502948373C00557DDD /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 04D2984F2948373C00557DDD /* ComposableArchitecture */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		04D2983B2948367F00557DDD /* tca-alert.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "tca-alert.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		04D2983E2948367F00557DDD /* tca_alertApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tca_alertApp.swift; sourceTree = "<group>"; };
+		04D2983E2948367F00557DDD /* AlertApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertApp.swift; sourceTree = "<group>"; };
 		04D298402948367F00557DDD /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		04D298422948368000557DDD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		04D298452948368000557DDD /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -26,6 +27,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04D298502948373C00557DDD /* ComposableArchitecture in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -51,7 +53,7 @@
 		04D2983D2948367F00557DDD /* tca-alert */ = {
 			isa = PBXGroup;
 			children = (
-				04D2983E2948367F00557DDD /* tca_alertApp.swift */,
+				04D2983E2948367F00557DDD /* AlertApp.swift */,
 				04D298402948367F00557DDD /* ContentView.swift */,
 				04D298422948368000557DDD /* Assets.xcassets */,
 				04D298442948368000557DDD /* Preview Content */,
@@ -83,6 +85,9 @@
 			dependencies = (
 			);
 			name = "tca-alert";
+			packageProductDependencies = (
+				04D2984F2948373C00557DDD /* ComposableArchitecture */,
+			);
 			productName = "tca-alert";
 			productReference = 04D2983B2948367F00557DDD /* tca-alert.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +116,9 @@
 				Base,
 			);
 			mainGroup = 04D298322948367F00557DDD;
+			packageReferences = (
+				04D2984E2948373C00557DDD /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
+			);
 			productRefGroup = 04D2983C2948367F00557DDD /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -138,7 +146,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				04D298412948367F00557DDD /* ContentView.swift in Sources */,
-				04D2983F2948367F00557DDD /* tca_alertApp.swift in Sources */,
+				04D2983F2948367F00557DDD /* AlertApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -275,6 +283,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -304,6 +313,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -339,6 +349,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		04D2984E2948373C00557DDD /* XCRemoteSwiftPackageReference "swift-composable-architecture" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pointfreeco/swift-composable-architecture";
+			requirement = {
+				kind = exactVersion;
+				version = 0.47.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		04D2984F2948373C00557DDD /* ComposableArchitecture */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 04D2984E2948373C00557DDD /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
+			productName = ComposableArchitecture;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 04D298332948367F00557DDD /* Project object */;
 }

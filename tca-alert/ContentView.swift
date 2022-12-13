@@ -1,26 +1,64 @@
-//
-//  ContentView.swift
-//  tca-alert
-//
-//  Created by sakai.yunosuke on 2022/12/13.
-//
-
+import ComposableArchitecture
 import SwiftUI
 
-struct ContentView: View {
-    var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+struct ContentReducer: ReducerProtocol {
+    struct State: Equatable {
+        var alert: AlertState<Action.Alert>?
+    }
+    
+    enum Action: Equatable {
+        case alert(Alert)
+        case showAlert
+        
+        enum Alert {
+            case dismissed
+            case okTapped
         }
-        .padding()
+    }
+    
+    func reduce(into state: inout State, action: Action) -> EffectTask<Action> {
+        switch action {
+        case .alert(.dismissed):
+            state.alert = nil
+            return .none
+            
+        case .alert(.okTapped):
+            state.alert = nil
+            return .none
+            
+        case .showAlert:
+            state.alert = .init(
+                title: .init("Go next?"),
+                primaryButton: .default(.init("OK"), action: .send(.okTapped)),
+                secondaryButton: .cancel(.init("Cancel"))
+            )
+            return .none
+        }
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
+struct ContentView: View {
+    let store: StoreOf<ContentReducer>
+    @ObservedObject private var viewStore: ViewStoreOf<ContentReducer>
+    
+    init(store: StoreOf<ContentReducer>) {
+        self.store = store
+        viewStore = .init(store)
+    }
+    
+    var body: some View {
+        VStack {
+            Button(action: { viewStore.send(.showAlert) }) {
+                Text("Show alert")
+            }
+        }
+        .padding()
+        .alert(
+            store.scope(
+                state: \.alert,
+                action: ContentReducer.Action.alert
+            ),
+            dismiss: .dismissed
+        )
     }
 }
