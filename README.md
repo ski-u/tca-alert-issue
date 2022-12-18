@@ -1,4 +1,6 @@
 # tca-alert-issue
+**This issue is fixed.** (https://github.com/pointfreeco/swiftui-navigation/releases/tag/0.4.4)
+
 ## issue
 - Button is disabled when we set like `secondaryButton: .cancel(.init("Cancel"))` in `AlertState.init`.
 - This occurs on iOS 14.
